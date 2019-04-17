@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+
+{% block body %}
+    <div class="ColorSlicing" style="padding-top: 100px">
+        <h4>
+            Enter R, G, B components and width
+        </h4>
+        <form class="ColorSlicingForm" style="padding-top: 15px" enctype="multipart/form-data" method="POST" action="/color-slicing-output/">
+            <table class="ColorSlicingTable">
+                <tr>
+                    <td style="padding-bottom: 1em">
+                        Red Color (R):
+                    </td>
+                    <td style="padding-bottom: 1em; padding-left: -10px;">
+                        <input type="number" min="0" max="255" step="1" name="red" id="redInput" class="intext" placeholder="0" tabindex="1" autofocus="" oninput="onSliderUpdate(this.value, 'redSlider')">
+                    </td>
+                    <td>
+                        <div class="slideContainer">
+                            <input type="range" min="0" max="255" value="0" class="slider" id="redSlider" onchange="updateSlider(this.value, 'redInput')">
+                        </div>
+                    </td>
+                </tr>
+                <tr style="padding-top: 100px">
+                    <td style="padding-bottom: 1em">
+                        Green Color (G):
+                    </td>
+                    <td style="padding-bottom: 1em">
+                        <input type="number" min="0" max="255" step="1" name="green" id="greenInput" class="intext" placeholder="0" tabindex="1" autofocus="" oninput="onSliderUpdate(this.value, 'greenSlider')">
+                    </td>
+                    <td>
+                        <div class="slideContainer">
+                            <input type="range" min="0" max="255" value="0" class="slider" id="greenSlider" onchange="updateSlider(this.value, 'greenInput')">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 1em">
+                        Blue Color(B):
+                    </td>
+                    <td style="padding-bottom: 1em">
+                        <input type="number" min="0" max="255" step="1" name="blue" id="blueInput" class="intext" placeholder="0" tabindex="1" autofocus="" oninput="onSliderUpdate(this.value, 'blueSlider')">
+                    </td>
+                    <td>
+                        <div class="slideContainer">
+                            <input type="range" min="0" max="255" value="0" class="slider" id="blueSlider" onchange="updateSlider(this.value, 'blueInput')">
+                        </div>
+                    </td>
+                </tr>
+                <tr style="padding-top: 100px">
+                    <td style="padding-bottom: 1em">
+                        Width
+                    </td>
+                    <td style="padding-bottom: 1em">
+                        <input type="number" min="0" max="255" step="1" name="width" id="width" class="intext" placeholder="0" tabindex="1" autofocus="">
+                    </td>
+                </tr>
+                <tr style="padding-top: 100px">
+                    <td style="padding-bottom: 1em">
+                        Upload File
+                    </td>
+                    <td style="padding-bottom: 1em">
+                        <label class="btn btn-default btn-file">
+                            Browse <input type="file" name="file" style="display: none; background-color: black">
+                        </label>
+                    </td>
+                </tr>
+                <tr style="padding-top: 100px">
+                    <td style="padding-bottom: 1em">
+
+                    </td>
+                    <td>
+                       <input type="submit" class="btn btn-success" value="Convert">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}

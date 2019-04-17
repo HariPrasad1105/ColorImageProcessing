@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+</body>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Color Image Processing</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">Color model transformations</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Psuedocolor image Processing
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/color-slicing/">Intensity Slicing</a></li>
+              <li><a href="#">Intensity to Color Transformation</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Smoothing</a></li>
+          <li><a href="#">Sharpening</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
