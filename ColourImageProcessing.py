@@ -35,6 +35,16 @@ def color_slicing():
     return render_template('color_slicing_output.html', filename='output.png')
 
 
+@app.route('/smoothing/')
+def smoothing():
+    pass
+
+
+@app.route('/sharpening/')
+def sharpening():
+    pass
+
+
 if __name__ == '__main__':
     UPLOAD_FOLDER = "E:\\Class Notes\\DIP\\ColourImageProcessing\\"
     ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
